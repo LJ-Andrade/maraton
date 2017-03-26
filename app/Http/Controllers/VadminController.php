@@ -17,7 +17,6 @@ class VadminController extends Controller
         $this->middleware('auth');
     }
 
-
     /**
      * Display a listing of the resource.
      *
@@ -28,12 +27,6 @@ class VadminController extends Controller
         $users    = User::orderBy('id', 'ASC')->where('type','member')->get();
         $vendedores = User::orderBy('id', 'ASC')->where('role','seller')->get();
         return view('vadmin')->with('users', $users)->with('vendedores', $vendedores);
-    }
-
-    public function vendedores(Request $request)
-    {
-        $vendedores = User::orderBy('id', 'ASC')->where('role','seller')->get();
-        return view('vadmin.vendedores')->with('vendedores', $vendedores);
     }
 
 

@@ -29,8 +29,7 @@
         </div>
     </div>
 
-    {{-- Second Section --}}
-
+    {{-- Section --}}
     <div class="container-fluid second-section">
         <div class="top-img">
             <img src="{{ asset('webimages/home/texturasup.png') }}" alt="">
@@ -39,12 +38,16 @@
             7KM <br>
             3,5KM
         </div>
-
         <div class="bottom-img">
             <img src="{{ asset('webimages/home/texturainf.png') }}" alt="">
         </div>
     </div>
-
+    {{-- Section --}}
+    <div class="container-fluid third-section">
+        <div class="row">
+            Tercer Sección
+        </div>
+    </div>
   
 
     @include('web.layouts.partials.contact')
@@ -61,7 +64,16 @@
 @section('custom_js')
 <script>    
 
-   
+
+    if ($(window).width() < 1250) {
+        $('.RightSocialIcons').removeClass('navbar-right');
+    }
+    else {
+        $('.RightSocialIcons').addClass('navbar-right');
+    }
+
+
 
 </script>
+
 @endsection

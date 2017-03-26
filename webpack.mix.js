@@ -39,9 +39,9 @@ mix.sass('resources/assets/sass/vadmin/vadmin.sass', 'public/css')
     processCssUrls: false
   });
 
-// mix.sass('resources/assets/sass/web/web.sass', 'public/css')
-//   .options({
-//     processCssUrls: false
-//   });
+mix.sass('resources/assets/sass/web/web.sass', 'public/css')
+  .options({
+    processCssUrls: false
+  });
 
 // .js('resources/assets/js/vadmin/vadmin.js', 'public/js')

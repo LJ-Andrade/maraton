@@ -65,39 +65,6 @@ Route::get('/', [
 /////////////////////////////////////////////////
 
 
-
-Route::group(['prefix' => 'vadmin', 'middleware' => ['auth','admin']], function(){
-
-	// ------ Clientes ------- //
-	Route::get('ajax_list_clients/{page?}', 'Clientes\ClientesController@ajax_list');
-	Route::get('ajax_list_users/{page?}', 'UsersController@ajax_list');
-	Route::resource('clientes', 'Clientes\ClientesController');
-	Route::post('ajax_delete_cliente/{id}', 'Clientes\ClientesController@destroy');
-	Route::post('ajax_batch_delete_clientes/{id}', 'Clientes\ClientesController@ajax_batch_delete');
-
-	// Searcher
-	Route::get('ajax_list_search_clientes/{search?}', 'Clientes\ClientesController@ajax_list_search');
-	// Route::get('ajax_list_search_clientes/{id?}', 'Clientes\ClientesController@ajax_list_search');
-
-	// ------ Provincias ------- //
-	Route::resource('provincias', 'Provincias\ProvinciasController');
-	Route::post('ajax_delete_provincia/{id}', 'Provincias\ProvinciasController@destroy');
-	Route::post('ajax_batch_delete_provincias/{id}', 'Provincias\ProvinciasController@ajax_batch_delete');
-
-	// ------ Localidades ------- //
-	Route::resource('localidades', 'Localidades\LocalidadesController');
-	Route::post('ajax_delete_localidad/{id}', 'Localidades\LocalidadesController@destroy');
-	Route::post('ajax_batch_delete_localidades/{id}', 'Localidades\LocalidadesController@ajax_batch_delete');
-
-
-	// ------ Listado de Vendedores ------- //
-	Route::get('vendedores', 'VadminController@vendedores');
-});
-
-
-
-
-
 Route::get('portfolio', [
 	'as'   => 'web.portfolio',
 	'uses' => 'WebController@portfolio',

@@ -4,9 +4,41 @@
     .navbar-header
         .navbar-brand
             padding: 0
+            z-index: 9999
+            position: relative
             img
                 width: 200px
                 max-width: 100%
     .navbar-nav
     .middle-navbar
+        padding: 2px 40px
+        margin-left: -50px
         background-color: #fff
+        li a 
+            padding-left: 8px
+            padding-right: 8px
+        .mobile-menu2
+            display: none
+    .right-navbar
+        padding-right: 10px
+        padding-left: 15px
+        li a
+            padding: 0
+        img
+            width: 80px
+
+@media (max-width: 1250px)
+    .navbar .middle-navbar
+        .hide-middle
+            display: none
+        .mobile-menu2
+            display: block
+
+
+@media (max-width: 767px)
+    .navbar .middle-navbar
+        .hide-middle
+            display: block
+    
+
+
